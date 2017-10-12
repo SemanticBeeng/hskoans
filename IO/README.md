@@ -276,4 +276,3 @@ encrypt = ... -- incomplete function, just for illustration purposes
 main ::  IO ()
 main = interact (map encrypt)
 ```
-

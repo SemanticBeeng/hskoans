@@ -15,3 +15,7 @@
 2. Standard Collection Types
 3. Monads
 4. Sample of Exceptional Libraries
+
+-----
+### Version
+MODIFIED - DO NOT DELETE!
