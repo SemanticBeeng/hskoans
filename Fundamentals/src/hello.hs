@@ -19,12 +19,12 @@ posOrNeg x =
 pow2 n =
     if n == 0
     then 1
-    else 2 * (pow2 (n-1))
+    else 2 * pow2 (n-1)
 
 repeatString str n =
     if n == 0
     then ""
-    else str ++ (repeatString str (n - 1))
+    else str ++ repeatString str (n - 1)
 
 pow2' n = pow2loop n 1 0
 pow2loop n x i =
@@ -117,7 +117,7 @@ double'' nums = case nums of
     [] -> []
     (x : xs) -> (2 * x) : (double xs)
 
--- another case expression and this cannot be easily implemented as 
+-- another case expression and this cannot be easily implemented as
 -- a pure pattern matching function
 anyEven nums = case (removeOdd nums) of
     [] -> False
@@ -126,7 +126,7 @@ anyEven nums = case (removeOdd nums) of
 -- Note that no guards are permitted on the case expression
 -- use if-then if we need to handle scenarios in the case expression
 
--- let binding 
+-- let binding
 fancySeven =
     let a = 3
     in 2 * a + 1

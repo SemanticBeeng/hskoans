@@ -35,3 +35,4 @@ Session.vim
 
 # Specific stuff I want to exclude for this repo
 output.txt
+.stack-work
