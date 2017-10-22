@@ -1,0 +1,4 @@
+[submodule "deps/ek"]
+	path = deps/ek.wiki
+	url = git@github.com:SemanticBeeng/ek.wiki.git
+
