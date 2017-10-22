@@ -4,3 +4,5 @@
 2. Derived Type Classes
 3. Creating Type Classes
 4. Subclasses
+
+[[TypeClasses]]

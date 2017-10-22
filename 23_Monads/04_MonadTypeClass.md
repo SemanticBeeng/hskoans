@@ -1,6 +1,6 @@
 # Monad Type Class
 
-```
+```haskell
 class Monad m where
   return :: a -> m a
   (>>=) :: m a -> (a -> m b) -> m b
@@ -10,7 +10,7 @@ class Monad m where
 
 Now, we can generalize the `join` behavior for all monads.
 
-```
+```haskell
 join :: Monad m => m (m a) -> m a
 join mmx = mmx >>= id
 ```

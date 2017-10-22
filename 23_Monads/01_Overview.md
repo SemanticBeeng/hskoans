@@ -4,4 +4,3 @@
 * Common functionality for all monads
 * Monad type class
 * do-notation
-* [[06_Summary]]

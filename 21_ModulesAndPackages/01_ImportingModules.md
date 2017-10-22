@@ -2,7 +2,7 @@
 
 1. import
 
-```
+```haskell
 import Data.Set
 ```
 
@@ -10,7 +10,7 @@ Using the qualified keyword means that we have to specify the full qualified nam
 
 2. import requiring fully qualified name
 
-```
+```haskell
 import qualified Data.Set
 import qualified Data.Sequence
 ```
@@ -19,7 +19,7 @@ import qualified Data.Sequence
 
 It's troublesome to type out the fully qualified module names just to use a function. So we can cheat by using a shorthand name.
 
-```
+```haskell
 import Data.Sequence as Seq
 -- both
 -- Seq.empty
@@ -35,7 +35,7 @@ import qualified Data.Sequence as Seq
 
 For fine grain control over exactly which functions you want to import, use import lists:
 
-```
+```haskell
 import Data.Set (empty, size)
 ```
 
@@ -43,14 +43,14 @@ Using import lists to explicitly declare which functions we want to use is consi
 
 5. Data Types in explicit import lists
 
-```
+```haskell
 import Data.Maybe (Maybe)
 import Data.Maybe (Maybe (Just, Nothing))
 ```
 
 6. Type Classes in explicit import lists
 
-```
+```haskell
 import Control.Monad (Monad)
 import Control.Monad (Monad, return)
 ```
@@ -60,7 +60,7 @@ import Control.Monad (Monad, return)
 
 We can use
 
-```
+```haskell
 import Data.Set ()
 ```
 
@@ -70,7 +70,7 @@ if we are only interested to import the type class but none of its functions.
 
 We can specifically specify functions that we want to avoid importing
 
-```
+```haskell
 import Data.Set hiding (empty, size)
 import Prelude hiding (map)
 ```

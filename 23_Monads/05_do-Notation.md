@@ -1,6 +1,6 @@
 # do-Notation
 
-```
+```haskell
 addM :: Monad m => m Int -> m Int -> m Int
 addM mx my =
   mx >>= (\x -> my >>= (\y -> return (x + y)))
@@ -8,7 +8,7 @@ addM mx my =
 
 do-Notation is to make the above code readable:
 
-```
+```haskell
 addM' :: Monad m => m Int -> m Int -> m Int
 addM' mx my = do
   x <- mx  -- give us x in mx
@@ -16,7 +16,7 @@ addM' mx my = do
   return (x + y)  -- compute and package them, returning a monad
 ```
 
-```
+```haskell
 do
   x <- mx
   ...
@@ -52,4 +52,3 @@ If we execute `missing` function in ghci, we will see that it is nothing like wh
 , "Eve lost a car"
 , "Eve lost a puppy" ]
 ```
-

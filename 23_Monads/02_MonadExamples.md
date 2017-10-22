@@ -2,7 +2,7 @@
 
 ## IO
 
-```
+```haskell
 return :: a -> IO a
 ```
 
@@ -12,7 +12,7 @@ IO is like a box that can hold a value; easy to put something into the box but i
 
 But there's a concept called `bindIO` that helps us use the value.
 
-```
+```haskell
 bindIO :: IO a -> (a -> IO b) -> IO b
 ```
 
@@ -22,7 +22,7 @@ bindIO :: IO a -> (a -> IO b) -> IO b
 
 A list is a monad.
 
-```
+```haskell
 singleton :: a -> [a]
 ```
 
@@ -30,13 +30,13 @@ There is no `unsingleton :: [a] -> a` to reverse the singleton.
 
 What we do instead is to use a `flatMap`:
 
-```
+```haskell
 flatMap :: [a] -> (a -> [b]) -> [b]
 ```
 
 Usage in ghci:
 
-```
+```haskell
 flatMap [1, 7, 11] (\x -> [x, x + 1])
 [1, 2, 7, 8, 11, 12]
 ```
@@ -47,19 +47,19 @@ flatMap behaves like bindIO.
 
 data Maybe a = Nothing | Just a
 
-```
+```haskell
 Just :: a -> Maybe a
 ```
 
 Again, there's no `Unjust :: Maybe a -> a`
 
-```
+```haskell
 bindMaybe :: Maybe a -> (a -> Maybe b) -> (Maybe b)
 ```
 
 Usage:
 
-```
+```haskell
 bindMaybe (Just 0) (\x ->
   if (x == 0)
   then Nothing
@@ -68,7 +68,7 @@ bindMaybe (Just 0) (\x ->
 Nothing
 ```
 
-```
+```haskell
 bindMaybe (Just 1) (\x ->
   if (x == 0)
   then Nothing
@@ -79,7 +79,7 @@ Just 2
 
 These functions package up our values:
 
-```
+```haskell
 return :: a -> IO a
 singleton :: a -> [a]
 just :: a -> Maybe a
@@ -87,7 +87,7 @@ just :: a -> Maybe a
 
 These functions allow us to operate on the value in the package and return the changed value in the package again.
 
-```
+```haskell
 bindIO :: IO a -> (a -> IO b) -> IO b
 flatMap :: [a] -> (a -> [b]) -> [b]
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
